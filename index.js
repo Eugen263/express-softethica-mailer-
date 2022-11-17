@@ -2,11 +2,16 @@ const { TokenStorageController } = require("./token-store");
 const { createHmac } = require("crypto")
 require("dotenv").config()
 const nodemailer = require("nodemailer")
+const cors = require("cors")
 
 const express = require("express");
 const app = express()
 
 let TokenStor = new TokenStorageController();
+
+app.use(cors({
+    origin: "*"
+}))
 
 app.get("/tokenizer/get", (req, resp) => {
     console.log("[ TOKENIZER ] Create a token");
