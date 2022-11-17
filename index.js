@@ -67,6 +67,4 @@ app.get("/mail/send?", async (req, res) => {
     res.send(false)
 })
 
-app.listen(47345, "127.0.0.1", () => {
-    console.log("Hello")
-})
+app.listen(47345, "0.0.0.0")

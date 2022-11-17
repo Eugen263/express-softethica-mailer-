@@ -1,0 +1,12 @@
+version: '3.3'
+
+services:
+  api:
+    container_name: "express_mailer_container"
+    image: "express_mailer"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    entrypoint: ["node", "index.js"]
+    ports:
+      - 47345:47345
